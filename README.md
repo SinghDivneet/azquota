@@ -5,8 +5,8 @@ Backdrop:
 =========
 The quota information is all about how much resources are allocated for a subscription and how much of those resources are being actually used. This helps one to plan their deployments.
 
-There are in all 2 shell scripts which help to fetch the quota information as follows:
-azquotaworker.sh: This is the script which does the actual work of fetching the quota information for a subscription.
+There are in all 2 shell scripts which help to fetch the quota information as follows: <br />
+<b>azquotaworker.sh:</b> This is the script which does the actual work of fetching the quota information for a subscription.
 azquotamaster.sh: This is the script which feeds the parameters to the azquotaworker.sh and then executes it.
 
 Only the azquotamaster.sh is to be modified with the relevant details. 
