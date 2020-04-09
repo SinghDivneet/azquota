@@ -49,7 +49,7 @@ Enter the AAD service principal details based on the output obtained in step a. 
 
 So in all the 2 lines should look as below: <br/>
 
-regionarr=('<region1>' '<region2>')
+regionarr=('region1' 'region2') <br/>
 ./azquotaworker.sh "<sp_name>" "<sp_password>" "<tenant_id>" "<subscription_id>" "${regionarr[@]}"
 
 
