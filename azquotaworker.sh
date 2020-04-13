@@ -56,6 +56,15 @@ for region in ${regions[@]}; do
    echo "Fetching Storage Quota for region -- $region for subscription id: $SubscriptionId completed"
    echo " "
 
+#HDInsight quotas
+   echo "Fetching HDInsight Quota for region -- $region for subscription id: $SubscriptionId started"
+   echo "HDInsight Quota for region -- $region" >> $SubscriptionId"_"$region.csv
+   echo "===========================" >> $SubscriptionId"_"$region.csv
+   az hdinsight list-usage -l $region | egrep -w 'currentValue|limit' | sed 's/,//' >> $SubscriptionId"_"$region.csv
+   echo " " >> $SubscriptionId"_"$region.csv
+   echo "Fetching HDInsight Quota for region -- $region for subscription id: $SubscriptionId completed"
+   echo " "
+
 done
 
 
