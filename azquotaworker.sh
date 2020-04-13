@@ -65,6 +65,15 @@ for region in ${regions[@]}; do
    echo "Fetching HDInsight Quota for region -- $region for subscription id: $SubscriptionId completed"
    echo " "
 
+#SQL quotas
+   echo "Fetching SQL Quota for region -- $region for subscription id: $SubscriptionId started"
+   echo "SQL Quota for region -- $region" >> $SubscriptionId"_"$region.csv
+   echo "===========================" >> $SubscriptionId"_"$region.csv
+   az sql list-usages -l $region -o table >> $SubscriptionId"_"$region.csv
+   echo " " >> $SubscriptionId"_"$region.csv
+   echo "Fetching SQL Quota for region -- $region for subscription id: $SubscriptionId completed"
+   echo " "
+
 done
 
 
